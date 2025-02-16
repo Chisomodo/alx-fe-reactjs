@@ -1,4 +1,4 @@
-import WelcomeMessage from './Welcome.jss';
+import WelcomeMessage from './Welcome.js';
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
