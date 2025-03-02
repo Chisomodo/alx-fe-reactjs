@@ -1,0 +1,14 @@
+# Ignore system files and unnecessary directories
+Application Data/
+Cookies/
+Intel/
+Local Settings/
+My Documents/
+NetHood/
+PrintHood/
+Recent/
+SendTo/
+Start Menu/
+Templates/
+node_modules/
+.DS_Store
