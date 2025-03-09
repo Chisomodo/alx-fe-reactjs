@@ -16,20 +16,21 @@ const RegistrationForm = () => {
     });
   };
 
-  const validate = () => {
-    let tempErrors = {};
-    if (!formData.username) tempErrors.username = "Username is required";
-    if (!formData.email) tempErrors.email = "Email is required";
-    if (!formData.password) tempErrors.password = "Password is required";
-    setErrors(tempErrors);
-    return Object.keys(tempErrors).length === 0;
-  };
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (validate()) {
-      console.log("Form submitted:", formData);
+    const newErrors = {};
+
+    if (!formData.username) newErrors.username = "Username is required";
+    if (!formData.email) newErrors.email = "Email is required";
+    if (!formData.password) newErrors.password = "Password is required";
+
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+      return;
     }
+
+    console.log("Form Submitted:", formData);
+    setErrors({});
   };
 
   return (
@@ -39,8 +40,8 @@ const RegistrationForm = () => {
         <input
           type="text"
           name="username"
-          value={formData.username}  // Corrected here
-          onChange={handleChange}
+          value={formData.username} // ✅ Controlled Component
+          onChange={handleChange} // ✅ Handles Input Change
         />
         {errors.username && <p>{errors.username}</p>}
       </div>
@@ -49,8 +50,8 @@ const RegistrationForm = () => {
         <input
           type="email"
           name="email"
-          value={formData.email}  // Corrected here
-          onChange={handleChange}
+          value={formData.email} // ✅ Controlled Component
+          onChange={handleChange} // ✅ Handles Input Change
         />
         {errors.email && <p>{errors.email}</p>}
       </div>
@@ -59,8 +60,8 @@ const RegistrationForm = () => {
         <input
           type="password"
           name="password"
-          value={formData.password}  // Corrected here
-          onChange={handleChange}
+          value={formData.password} // ✅ Controlled Component
+          onChange={handleChange} // ✅ Handles Input Change
         />
         {errors.password && <p>{errors.password}</p>}
       </div>
