@@ -11,12 +11,10 @@
   "dependencies": {
     "@react-router/node": "^7.3.0",
     "@react-router/serve": "^7.3.0",
-    "formik": "^2.4.6",
     "isbot": "^5.1.17",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-router": "^7.3.0",
-    "yup": "^1.6.1"
+    "react-router": "^7.3.0"
   },
   "devDependencies": {
     "@react-router/dev": "^7.3.0",
