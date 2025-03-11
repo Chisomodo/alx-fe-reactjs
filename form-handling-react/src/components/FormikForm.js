@@ -1,4 +1,4 @@
-// src/components/formikForm.jsx
+// src/components/formikForm.js
 
 import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik'; // All imports present
@@ -45,4 +45,4 @@ function FormikForm() {
   );
 }
 
-export default formikForm;
+export default FormikForm;

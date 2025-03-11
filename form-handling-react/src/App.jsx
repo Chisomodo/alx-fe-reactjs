@@ -1,5 +1,5 @@
 import React from 'react';
-import FormikForm from './components/FormikForm';
+import FormikForm from './components/formikForm';
 import RegistrationForm from './components/RegistrationForm';
 
 
