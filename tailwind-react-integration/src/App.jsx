@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, Navigate, useParams } from 'react-router-dom';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Blog from './components/Blog'; // Assuming you have a Blog component
+import UserProfile from "./components/UserProfile";
+
 
 
 
@@ -84,6 +86,14 @@ function App() {
 }
 
 
+
+function App() {
+  return (
+    <div>
+      <UserProfile />
+    </div>
+  );
+}
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
