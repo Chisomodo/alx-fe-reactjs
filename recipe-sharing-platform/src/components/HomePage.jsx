@@ -1,16 +1,37 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import HomePage from "./components/HomePage";
-import RecipeDetail from "./components/RecipeDetail";
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom"; // ✅ Make sure this is imported
 
-const App = () => {
+const HomePage = () => {
+  const [recipes, setRecipes] = useState([]);
+
+  useEffect(() => {
+    fetch("/data.json")
+      .then((response) => response.json())
+      .then((data) => setRecipes(data));
+  }, []);
+
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/recipe/:id" element={<RecipeDetail />} />
-      </Routes>
-    </Router>
+    <div className="container mx-auto p-4">
+      <h1 className="text-2xl font-bold mb-4 text-center">Recipe Collection</h1>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {recipes.map((recipe) => (
+          <Link // ✅ Use Link instead of <a>
+            key={recipe.id}
+            to={`/recipe/${recipe.id}`}
+            className="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-transform transform hover:scale-105 block"
+          >
+            <img
+              src={recipe.image}
+              alt={recipe.title}
+              className="w-full h-40 object-cover rounded-md mb-4"
+            />
+            <h2 className="text-xl font-semibold">{recipe.title}</h2>
+            <p className="text-gray-600 text-sm mt-2">{recipe.summary}</p>
+          </Link>
+        ))}
+      </div>
+    </div>
   );
 };
 
-export default App;
+export default HomePage;
