@@ -40,3 +40,32 @@
 .read-the-docs {
   color: #888;
 }
+
+.App {
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.search-container {
+  margin: 20px;
+}
+
+input {
+  padding: 8px;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+button {
+  padding: 8px 12px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.user-info {
+  margin-top: 20px;
+}
+
+.user-info img {
+  border-radius: 50%;
+}
